@@ -1,0 +1,6 @@
+data/raw
+data/processed
+runs/
+saved_models/
+__pycache__
+*.pyc
