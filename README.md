@@ -6,71 +6,40 @@ This project contains the implementation of a 3D U-Net model with self-attention
 
 ## Features
 
-- 3D U-Net using PyTorch for volumetric segmentation
-- Move generation for all piece types
-- Minimax AI with a simple evaluation function
-- Legal move filtering and check detection
-- Command-line input with standard chess algebraic notation
-- ❌ No castling, en passant, or promotion support (yet)
+- 3D U-Net implementation using PyTorch 
+- Self-attention
+- Training on BraTS 2020 dataset (multimodal MRI: T1, T1Gd, T2, FLAIR)
+- Evaluation with Dice coefficient and Intersection over Union (IoU)
+- Streamlit interface for visualization of predicted tumor masks
 
 ---
 
 ## Setup
 
-### Download executable
-1. Download the latest executable file [chess-bot-mac](https://github.com/aqmeraamir/chess-bot/releases/download/1.0/chess-bot-mac) (only works on mac/unix)
-
-2. Run the executable 
-
-OR
-
-### Build from source (will work on windows)
-
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/aqmeraamir/chess-bot.git
-   cd chess-bot
-   ```
-
-2. Build the project using Make
-    ```
-    make
-    ```
-
-
-3. Run the game
-    ```
-    .bin/ChessBot
-    ```
-
-## How to Play
-Once the board prints in the terminal, enter your moves using standard algebraic notation:
-
-| Example | Meaning                 |
-| ------- | ----------------------- |
-| `e2e4`  | Move pawn from e2 to e4 |
-| `Nf3`   | Move knight to f3       |
-| `q`     | Quit the game           |
-
-The AI will play as Black and make its move after yours.
-
-## Sample Output
-
-CLI:
-
+1. Clone the repo
 ```
-8 ♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜
-7 ♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟
-6
-5
-4
-3
-2 ♙ ♙ ♙ ♙ ♙ ♙ ♙ ♙
-1 ♖ ♘ ♗ ♕ ♔ ♗ ♘ ♖
-  a b c d e f g h
+git clone https://github.com/yourusername/unet-sa-brats2020.git
+cd unet-sa-brats2020
 ```
 
-Enter your move (e.g., e2e4) or 'q' to quit:
+2. Install dependencies
+```
+pip install -r requirements.txt
+```
+
+
+
+## Usage
+
+**Run the interface (GUI)**
+```
+streamlit run main.py
+```
+
+Train the model 
+```
+python train.py --data_dir path/to/processed_brats2020 --epochs 100 --batch_size 2
+```
 
 ## License
-MIT — feel free to use or modify this for your own chess projects.
+This project is for educational purposes only. Please cite appropriately if you use it in academic work.
