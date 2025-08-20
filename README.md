@@ -38,7 +38,7 @@ streamlit run main.py
 
 Train the model 
 ```
-python train.py --data_dir path/to/processed_brats2020 --epochs 100 --batch_size 2
+python train.py --epochs 100 --batch_size 2
 ```
 
 ## License
